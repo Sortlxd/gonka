@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://5p1m2h2n7baq"]
+
+[ext_resource type="Script" uid="uid://b5mkc2f74mwdt" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q1nwa"]
+size = Vector3(1.5, 0.8, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2olmh"]
+albedo_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pymum"]
+material = SubResource("StandardMaterial3D_2olmh")
+size = Vector3(6, 0.1, 200)
+
+[node name="Main" type="Node3D" unique_id=1745455603]
+script = ExtResource("1_ig7tw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1360993182]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 3, 6)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=718076757]
+
+[node name="Car" type="MeshInstance3D" parent="." unique_id=1201202052]
+mesh = SubResource("BoxMesh_q1nwa")
+
+[node name="Road" type="MeshInstance3D" parent="." unique_id=6781500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -90)
+mesh = SubResource("BoxMesh_pymum")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2081946006]
+
+[node name="KmLabel" type="Label" parent="CanvasLayer" unique_id=59704262]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer" unique_id=373923822]
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 60.0
+offset_bottom = 83.0
+
+[node name="UpgradesBox" type="VBoxContainer" parent="CanvasLayer" unique_id=594023598]
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 60.0
+offset_bottom = 140.0
